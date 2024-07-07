@@ -20,51 +20,58 @@ Addressed the imbalance between fraudulent and genuine transactions using unders
 ## Feature Scaling: 
 Standardized the ‘Amount’ column using StandardScaler for consistent data distribution.
 
+\```python
+# Undersampling example
+from imblearn.under_sampling import RandomUnderSampler
+
+rus = RandomUnderSampler()
+X_rus, y_rus = rus.fit_resample(X_train, y_train)
+\```
+
 
 # Exploratory Data Analysis (EDA):
 
 Visualized transaction distributions using seaborn and matplotlib to understand class imbalance. Explored feature correlations to identify potential predictors of fraud.
 
-('python')
-('Copy code')
-('import seaborn as sns')
-('import matplotlib.pyplot as plt')
+\```python
+import seaborn as sns
+import matplotlib.pyplot as plt
 
-# Visualize class distribution
-('sns.countplot(data['Class'])')
-('plt.title('Transaction Class Distribution')')
-('plt.xlabel('Class (0: Genuine, 1: Fraud)')')
-('plt.ylabel('Count')')
-('plt.show()')
+sns.countplot(data['Class'])
+plt.title('Transaction Class Distribution')
+plt.xlabel('Class (0: Genuine, 1: Fraud)')
+plt.ylabel('Count')
+plt.show()
+\```
 
 # Model Building:
 Implemented Logistic Regression and Decision Tree Classifier as baseline models. Evaluated model performance using accuracy, precision, recall, and F1-score metrics.
 
-('python')
-("Copy code')
-('from sklearn.linear_model import LogisticRegression')
-('from sklearn.metrics import accuracy_score, precision_score, recall_score, f1_score')
+\```python
+from sklearn.linear_model import LogisticRegression
+from sklearn.tree import DecisionTreeClassifier
+from sklearn.metrics import accuracy_score, precision_score, recall_score, f1_score
 
 # Initialize Logistic Regression model
-('clf = LogisticRegression()')
+clf = LogisticRegression()
 
 # Fit the model
-('clf.fit(X_train, y_train)')
+clf.fit(X_train, y_train)
 
 # Predict on test set
-('y_pred = clf.predict(X_test)')
+y_pred = clf.predict(X_test)
 
 # Evaluate model performance
+accuracy = accuracy_score(y_test, y_pred)
+precision = precision_score(y_test, y_pred)
+recall = recall_score(y_test, y_pred)
+f1 = f1_score(y_test, y_pred)
 
-('accuracy = accuracy_score(y_test, y_pred)')
-('precision = precision_score(y_test, y_pred)')
-('recall = recall_score(y_test, y_pred)')
-('f1 = f1_score(y_test, y_pred)')
-
-(""print(f"Accuracy: {accuracy:.2f}"')
-("'print(f"Precision: {precision:.2f}"')
-("'print(f"Recall: {recall:.2f}")
-("'print(f"F1 Score: {f1:.2f}")'")
+print(f"Accuracy: {accuracy:.2f}")
+print(f"Precision: {precision:.2f}")
+print(f"Recall: {recall:.2f}")
+print(f"F1 Score: {f1:.2f}")
+\```
 
 # Results and Conclusion:
 
