@@ -33,7 +33,7 @@ Evaluated model performance using accuracy, precision, recall, and F1-score metr
 
 Balanced the dataset by randomly undersampling the majority class (genuine transactions) to match the minority class (fraudulent transactions).
 
-**##Oversampling (SMOTE):**
+**Oversampling (SMOTE):**
 
 Applied Synthetic Minority Over-sampling Technique to generate synthetic samples of the minority class to achieve balance.
 Compared model performance before and after balancing the dataset to observe improvements in metrics such as precision, recall, and F1-score.
@@ -57,7 +57,7 @@ Advanced Techniques: Investigate the application of deep learning models like ne
 Develop strategies for real-time fraud detection systems in collaboration with financial institutions.
 
 
-**###Final Thoughts:**
+**Final Thoughts:**
 Building an effective fraud detection system requires a blend of advanced techniques, thorough data preprocessing, and rigorous model evaluation. By leveraging machine learning algorithms and addressing class imbalance, we can significantly enhance the security and reliability of financial transactions in today's digital age.
 
 
